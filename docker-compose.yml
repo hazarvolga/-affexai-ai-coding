@@ -39,4 +39,4 @@ volumes:
 
 networks:
   ai-coding-network:
-    external: true
+    driver: bridge
