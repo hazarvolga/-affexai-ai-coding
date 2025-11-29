@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+    networks:
+      - ai-coding-network
+    restart: unless-stopped
+
+  openhands:
+    image: ghcr.io/all-hands-ai/openhands:latest
+    container_name: openhands
+    ports:
+      - "3000:3000"
+    volumes:
+      - openhands-workspace:/opt/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - LLM_MODEL=ollama/deepseek-coder-v2:16b
+      - LLM_BASE_URL=http://ollama:11434
+      - WORKSPACE_DIR=/opt/workspace
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    networks:
+      - ai-coding-network
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+volumes:
+  ollama-data:
+  openhands-workspace:
+
+networks:
+  ai-coding-network:
+    external: true
