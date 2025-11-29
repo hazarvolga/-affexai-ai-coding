@@ -22,6 +22,8 @@ services:
     volumes:
       - openhands-workspace:/opt/workspace
       - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - .env
     environment:
       - LLM_MODEL=ollama/deepseek-coder-v2:16b
       - LLM_BASE_URL=http://ollama:11434

@@ -1,0 +1,42 @@
+instance-orko:   141.148.206.187  
+ssh -i ssh-key-2025-09-19.key ubuntu@141.148.206.18
+
+
+Your instance is ready to use!
+
+You can access Coolify through your Public IPV4: http://141.148.206.187:8000
+
+If your Public IP is not accessible, you can use the following Private IPs:
+
+http://10.0.1.1:8000
+http://10.0.2.1:8000
+http://fd0e:d537:538d::1:8000
+
+WARNING: It is highly recommended to backup your Environment variables file (/data/coolify/source/.env) to a safe location, outside of this server (e.g. into a Password Manager).
+
+
+
+
+
+
+
+instance-hulyaekiz 0 161.118.171.201
+
+ssh -i instance-hulya/ssh-key-2025-09-20.key ubuntu@161.118.171.201
+
+
+
+Instance-aluplan-one   80.225.231.62 
+Your instance is ready to use!
+
+You can access Coolify through your Public IPV4: http://80.225.231.62:8000
+
+If your Public IP is not accessible, you can use the following Private IPs:
+
+http://10.0.1.1:8000
+http://10.0.2.1:8000
+http://fdf2:e6e:7e5b::1:8000
+
+WARNING: It is highly recommended to backup your Environment variables file (/data/coolify/source/.env) to a safe location, outside of this server (e.g. into a Password Manager).
+
+ubuntu@instance-aluplan-one:~$ 
